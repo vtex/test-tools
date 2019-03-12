@@ -22,13 +22,13 @@ Run in your terminal:
 $ yarn test
 ```
 
-Under the hood, we use [Jest](https://jestjs.io/), so you can pass Jest flags as parameters: [Read the docs](https://jestjs.io/docs/en/cli.html).
+Under the hood, we use [Jest](https://jestjs.io/), so you can pass Jest flags as parameters: [read the docs](https://jestjs.io/docs/en/cli.html).
 
 ## API
 
 ### `react` module
 
-This package provides the module `react` so you can easily test VTEX IO React apps.
+The module `react` makes it easy to test VTEX IO React apps. It uses `react-testing-library` under the hood, so most of its API it's the same: [read the docs](https://testing-library.com/docs/intro). There are few new features added to it as shown bellow.
 
 #### Example
 
