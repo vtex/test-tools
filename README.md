@@ -1,6 +1,6 @@
 # VTEX Test Tools
 
-> Tools for testing JavaScript, TypeScript, Node and React applications
+> Add tests to your VTEX IO app in an instant 🚀
 
 ## Install
 
@@ -21,6 +21,8 @@ Run in your terminal:
 ```sh
 $ yarn test
 ```
+
+Done! 🎉
 
 Under the hood, we use [Jest](https://jestjs.io/), so you can pass Jest flags as parameters: [read the docs](https://jestjs.io/docs/en/cli.html).
 
