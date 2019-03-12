@@ -16,13 +16,13 @@ module.exports = (resolve, resolveAppPath) => {
     rootDir: resolveAppPath('.'),
     setupFilesAfterEnv: setupFilesAfterEnv,
     moduleNameMapper: {
-      "^.+\\.css$": resolve('node_modules/identity-obj-proxy'),
-      "^react$": resolve('node_modules/react'),
+      "^.+\\.css$": require.resolve('identity-obj-proxy'),
+      "^react$": require.resolve('react'),
     },
     transform: {
-      "\\.(gql|graphql)$": resolve('node_modules/jest-transform-graphql'),
+      "\\.(gql|graphql)$": require.resolve('jest-transform-graphql'),
       "^.+\\.(js|jsx|mjs)$": resolve('modules/jest/babelTransform.js'),
-      "^.+\\.(ts|tsx)$": resolve('node_modules/ts-jest'),
+      "^.+\\.(ts|tsx)$": require.resolve('ts-jest'),
       '^(?!.*\\.(js|jsx|mjs|css|ts|tsx|json|graphql|gql)$)': resolve(
         'modules/jest/fileTransform.js'
       ),
