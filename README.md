@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-$ yarn add @vtex/test-tools @babel/runtime -D
+$ yarn add @vtex/test-tools apollo-client -D
 ```
 
 ## Usage
