@@ -28,16 +28,16 @@ Under the hood, we use [Jest](https://jestjs.io/), so you can pass Jest flags as
 
 ### `react` module
 
-The module `react` makes it easy to test VTEX IO React apps. It uses `react-testing-library` under the hood, so most of its API it's the same: [read the docs](https://testing-library.com/docs/intro). There are few new features added to it as shown bellow.
+The module `react` makes it easy to test VTEX IO React apps.
 
 #### Example
 
 ```js
-import React from "react"
-import { render } from "@vtex/test-tools/react"
-import HelloWorld from "./HelloWorld"
+import React from 'react'
+import { render } from '@vtex/test-tools/react'
+import HelloWorld from './HelloWorld'
 
-test("should render the Hello!", () => {
+test('should render the Hello!', () => {
   const { getByText } = render(<HelloWorld />)
 
   const element = getByText(/Hello!/)
@@ -45,6 +45,10 @@ test("should render the Hello!", () => {
   expect(element).toBeDefined()
 })
 ```
+
+This module uses `react-testing-library` under the hood, so most of its API it's the same: [read the docs](https://testing-library.com/docs/intro).
+
+There are few new features added to it:
 
 #### Messages
 
@@ -61,11 +65,11 @@ You can change the default locale being used adding a config to your `package.js
 If you want to change the locale just in a test, you may pass the `locale` option. Example:
 
 ```js
-import React from "react"
-import { render } from "@vtex/test-tools/react"
-import HelloWorld from "./HelloWorld"
+import React from 'react'
+import { render } from '@vtex/test-tools/react'
+import HelloWorld from './HelloWorld'
 
-test("should render the example translated to portuguese", () => {
+test('should render the example translated to portuguese', () => {
   const { getByText } = render(
     <HelloWorld />,
     { locale: 'pt' }
@@ -85,12 +89,12 @@ We automatically wrap your component with an Apollo's [`MockProvider`](https://w
 You can pass props to it using the `graphql` option. Example:
 
 ```js
-import React from "react"
-import { render } from "@vtex/test-tools/react"
-import GraphqlComponent from "./GraphqlComponent"
+import React from 'react'
+import { render } from '@vtex/test-tools/react'
+import GraphqlComponent from './GraphqlComponent'
 import GET_BOOKS from './getBooks.graphql'
 
-test("should render mock graphql responses", async () => {
+test('should render mock graphql responses', async () => {
   const bookMock = {
     request: {
       query: GET_BOOKS,
