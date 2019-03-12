@@ -1,0 +1,73 @@
+{
+  "name": "@vtex/test-tools",
+  "version": "0.0.0",
+  "description": "VTEX IO testing tools",
+  "bin": {
+    "vtex-test-tools": "./bin/vtex-test-tools.js"
+  },
+  "files": [
+    "bin",
+    "modules",
+    "scripts",
+    "react.js",
+    "react.d.ts",
+    "tsconfig.json"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-transform-runtime": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/graphql": "^14.0.7",
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.11.1",
+    "@types/prop-types": "^15.7.0",
+    "@types/react": "^16.8.7",
+    "@types/react-intl": "^2.3.17",
+    "apollo-cache-inmemory": "^1.5.1",
+    "apollo-client": "^2.5.1",
+    "babel-jest": "^24.4.0",
+    "fs-extra": "~5.0.0",
+    "graphql": "~0.13.2",
+    "graphql-tag": "~2.8.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.4.0",
+    "jest-dom": "^3.1.2",
+    "jest-transform-graphql": "^2.1.0",
+    "react": "^16.8.4",
+    "react-apollo": "^2.5.2",
+    "react-dom": "^16.8.4",
+    "react-intl": "^2.8.0",
+    "react-testing-library": "^6.0.0",
+    "regenerator-runtime": "^0.13.1",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3333"
+  },
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge.0"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.3.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vtex/react-testing.git"
+  },
+  "keywords": [
+    "react",
+    "vtex",
+    "vtex",
+    "io",
+    "test",
+    "graphl",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vtex/react-testing/issues"
+  },
+  "homepage": "https://github.com/vtex/react-testing#readme"
+}
