@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Remove `tsconfig.json` from project. Use user `tsconfig.json`.
+
 ## [0.1.1] - 2019-03-12
 
 ### Fixed
