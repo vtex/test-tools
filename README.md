@@ -10,10 +10,19 @@ $ yarn add @vtex/test-tools apollo-client -D
 
 ## Usage
 
-Add a new script to your `package.json`:
+Add a new script to your `react/package.json`:
 
 ```json
   "test": "vtex-test-tools test"
+```
+
+Add these lines to your `.vtexignore`:
+
+```
+react/**/__tests__/**
+react/**/__mocks__/**
+react/**/*.test.js
+react/**/*.test.tsx
 ```
 
 Run in your terminal:
@@ -21,6 +30,8 @@ Run in your terminal:
 ```sh
 $ yarn test
 ```
+
+If you're using TypeScript there are a few [more steps](./examples/typescript/).
 
 Done! 🎉
 
@@ -131,7 +142,7 @@ These are some common use cases that might be helpful to see how it's done:
 
 ### [Testing a React component](https://github.com/klzns/test-repo/blob/master/react/JsComponent.test.js)
 
-### [Testing a TypeScript React component](https://github.com/klzns/test-repo/blob/master/react/TsComponent.test.tsx)
+### [TypeScript](./examples/typescript/)
 
 ### [Testing a component using CSS Modules](https://github.com/klzns/test-repo/blob/master/react/CssComponent.test.js)
 
