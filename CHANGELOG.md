@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Use `en.json` as default translation.
+
 ## [0.1.2] - 2019-03-12
 
 ### Fixed
