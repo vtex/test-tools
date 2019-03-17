@@ -16,6 +16,7 @@
     "@types/react": "^16.8.7",
     "@types/react-intl": "^2.3.17",
     "@vtex/test-tools": "^0.1.0",
-    "apollo-client": "^2.5.1"
+    "apollo-client": "^2.5.1",
+    "typescript": "^3.3.3333"
   }
 }
