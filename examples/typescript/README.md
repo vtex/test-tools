@@ -10,4 +10,6 @@ yarn add typescript @types/graphql @types/jest @types/node @types/react @types/r
 
 Add a `tsconfig.json` file just like [`tsconfig.json`](./tsconfig.json).
 
+Notice that you need to import `@vtex/test-tools/react` whenever you want to use Jest, since `react.d.ts` exports the types for Jest.
+
 Done 🎉
