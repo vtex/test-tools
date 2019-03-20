@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Export types for Jest so that TypeScript compiler can find them.
+
 ## [0.1.4] - 2019-03-18
 
 ### Fixed
