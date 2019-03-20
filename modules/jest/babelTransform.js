@@ -10,7 +10,8 @@ module.exports = babelJest.createTransformer({
   ],
   plugins: [
     require.resolve('@babel/plugin-proposal-class-properties'),
-    require.resolve('@babel/plugin-transform-runtime')
+    require.resolve('@babel/plugin-transform-runtime'),
+    require.resolve('babel-plugin-dynamic-import-node'),
   ],
   babelrc: false,
   configFile: false
