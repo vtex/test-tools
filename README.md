@@ -23,6 +23,7 @@ react/**/__tests__/**
 react/**/__mocks__/**
 react/**/__snapshots__/**
 react/**/*.test.js
+react/**/*.test.ts
 react/**/*.test.tsx
 ```
 
