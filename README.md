@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-$ yarn add @vtex/test-tools apollo-client -D
+$ yarn add @vtex/test-tools apollo-client apollo-cache-inmemory -D
 ```
 
 ## Usage
@@ -21,6 +21,7 @@ Add these lines to your `.vtexignore`:
 ```
 react/**/__tests__/**
 react/**/__mocks__/**
+react/**/__snapshots__/**
 react/**/*.test.js
 react/**/*.test.tsx
 ```
