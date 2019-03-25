@@ -1,6 +1,6 @@
 {
   "name": "@vtex/test-tools",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "VTEX IO testing tools",
   "bin": {
     "vtex-test-tools": "./bin/vtex-test-tools.js"
@@ -21,6 +21,7 @@
     "apollo-cache-inmemory": "^1.5.1",
     "apollo-client": "^2.5.1",
     "babel-jest": "^24.4.0",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
     "fs-extra": "~5.0.0",
     "graphql": "~0.13.2",
     "graphql-tag": "~2.8.0",

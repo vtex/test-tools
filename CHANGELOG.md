@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2019-03-25
+
+### Added
+
+- Support to Dynamic Import.
+
 ## [0.1.5] - 2019-03-22
 
 ### Fixed
@@ -17,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Dependency issue when running TypeScript tests
+- Dependency issue when running TypeScript tests.
 
 ## [0.1.3] - 2019-03-15
 
