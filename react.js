@@ -24,7 +24,7 @@ const customRender = (node, options = {}) => {
     : {}
 
   const intlProps = {
-    locale: locale,
+    locale: locale || 'en',
     messages: messages,
   }
 

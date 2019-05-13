@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Locale when tested app has no messages.
+
 ## [0.3.0] - 2019-05-12
 
 ### Added
