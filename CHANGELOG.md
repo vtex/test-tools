@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- **[BREAKING]** Use scoped library `@testing-library`. Related issue ["Create @testing-library scope for publishing. #260"](https://github.com/testing-library/dom-testing-library/issues/260).
+
 ## [0.3.2] - 2019-05-14
 
 ### Fixed

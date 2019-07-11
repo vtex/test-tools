@@ -1,5 +1,5 @@
 const React = require('react')
-const reactTestingLibrary = require('react-testing-library')
+const reactTestingLibrary = require('@testing-library/react')
 const { IntlProvider } = require('react-intl')
 const { MockedProvider } = require('react-apollo/test-utils')
 const { path, insertAll, reject, isNil, find } = require('ramda')
@@ -19,8 +19,8 @@ const getLocale = (optionsLocale) => {
 
 const customRender = (node, options = {}) => {
   const locale = getLocale(path(['locale'], options))
-  const messages = locale 
-    ? require(paths.resolveAppPath(`../messages/${locale}.json`)) 
+  const messages = locale
+    ? require(paths.resolveAppPath(`../messages/${locale}.json`))
     : {}
 
   const intlProps = {
