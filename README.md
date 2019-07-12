@@ -1,5 +1,7 @@
 # VTEX Test Tools
 
+![Npm badge](https://img.shields.io/npm/v/@vtex/test-tools.svg?style=flat-square)
+
 > Add tests to your VTEX IO app in an instant 🚀
 
 ## Install

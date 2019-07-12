@@ -1,7 +1,7 @@
-import { RenderOptions, RenderResult } from "react-testing-library";
+import { RenderOptions, RenderResult } from "@testing-library/react";
 import { MockedProviderProps } from "react-apollo/test-utils";
 
-export * from "react-testing-library";
+export * from "@testing-library/react";
 
 /**
  *
