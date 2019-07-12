@@ -1,6 +1,6 @@
 {
   "name": "@vtex/test-tools",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "description": "VTEX IO testing tools",
   "bin": {
     "vtex-test-tools": "./bin/vtex-test-tools.js"
