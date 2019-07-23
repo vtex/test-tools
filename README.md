@@ -107,11 +107,13 @@ You can pass props to it using the `graphql` option. Example:
 
 ```js
 import React from 'react'
-import { render } from '@vtex/test-tools/react'
+import { render, flushPromises } from '@vtex/test-tools/react'
 import GraphqlComponent from './GraphqlComponent'
 import GET_BOOKS from './getBooks.graphql'
 
 test('should render mock graphql responses', async () => {
+  jest.useFakeTimers()
+
   const bookMock = {
     request: {
       query: GET_BOOKS,
@@ -134,7 +136,8 @@ test('should render mock graphql responses', async () => {
 
   expect(getByText(/Loading/)).toBeDefined()
 
-  await new Promise(resolve => setTimeout(resolve, 0))
+  await flushPromises()
+  jest.runAllTimers()
 
   expect(getByText(/Hello/)).toBeDefined()
 })

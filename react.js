@@ -55,8 +55,10 @@ const customRender = (node, options = {}) => {
  }
 }
 
+const flushPromises = () => new Promise(resolve => setImmediate(resolve))
+
 // re-export everything
 module.exports = Object.assign({},
  reactTestingLibrary,
- { render: customRender }
+ { render: customRender, flushPromises }
 )
