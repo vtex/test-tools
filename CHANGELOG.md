@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Bump react to v16.9.0.
+- Bump react-testing-library to v9.1.3.
 
 ## [1.1.0] - 2019-07-23
 ### Added
