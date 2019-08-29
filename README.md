@@ -147,6 +147,8 @@ test('should render mock graphql responses', async () => {
 
 These are some common use cases that might be helpful to see how it's done:
 
+### [Debugging tests in VS Code](./examples/vscode/)
+
 ### [Testing a React component](https://github.com/klzns/test-repo/blob/master/react/JsComponent.test.js)
 
 ### [TypeScript](./examples/typescript/)
