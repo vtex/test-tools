@@ -31,9 +31,9 @@
     "jest": "^24.4.0",
     "jest-transform-graphql": "^2.1.0",
     "ramda": "^0.26.1",
-    "react": "^16.8.4",
+    "react": "^16.9.0",
     "react-apollo": "^2.5.2",
-    "react-dom": "^16.8.4",
+    "react-dom": "^16.9.0",
     "react-intl": "^2.8.0",
     "regenerator-runtime": "^0.13.1",
     "typescript": "^3.3.3333"
