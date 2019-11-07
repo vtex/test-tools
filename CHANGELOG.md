@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.1] - 2019-11-07
+
 ### Fixed
 
 - Implement cache function similiar to the one that we use on `render-runtime`.
