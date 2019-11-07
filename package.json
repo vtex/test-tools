@@ -20,7 +20,7 @@
     "@types/prop-types": "^15.7.0",
     "@types/react": "^16.8.7",
     "@types/react-intl": "^2.3.17",
-    "apollo-cache-inmemory": "^1.5.1",
+    "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.5.1",
     "babel-jest": "^24.4.0",
     "babel-plugin-dynamic-import-node": "^2.2.0",
@@ -46,7 +46,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/vtex/react-testing.git"
+    "url": "git+ssh://git@github.com/vtex/test-tools.git"
   },
   "keywords": [
     "react",
@@ -59,7 +59,7 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vtex/react-testing/issues"
+    "url": "https://github.com/vtex/test-tools/issues"
   },
-  "homepage": "https://github.com/vtex/react-testing#readme"
+  "homepage": "https://github.com/vtex/test-tools#readme"
 }
