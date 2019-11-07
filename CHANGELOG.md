@@ -7,18 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.1] - 2019-11-07
+
+### Fixed
+
+- Implement cache function similiar to the one that we use on `render-runtime`.
+
 ## [1.2.0] - 2019-08-29
+
 ### Changed
+
 - Bump react to v16.9.0.
 - Bump react-testing-library to v9.1.3.
 
 ## [1.1.0] - 2019-07-23
+
 ### Added
+
 - `flushPromises` utility function.
 
 ## [1.0.0] - 2019-07-12
 
 ### Changed
+
 - **[BREAKING]** Use scoped library `@testing-library`. Related issue ["Create @testing-library scope for publishing. #260"](https://github.com/testing-library/dom-testing-library/issues/260).
 
 ## [0.3.2] - 2019-05-14
