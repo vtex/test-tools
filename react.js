@@ -23,7 +23,6 @@ const getLocale = optionsLocale => {
 }
 
 // Creating apollo-client cache like render-runtime
-
 const generateCacheKey = value => {
   const { cacheId, __typename } = value || {}
   if (value && cacheId && __typename) {
