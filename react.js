@@ -1,7 +1,7 @@
 const React = require('react')
 const reactTestingLibrary = require('@testing-library/react')
+const { MockedProvider } = require('@apollo/react-testing')
 const { IntlProvider } = require('react-intl')
-const { MockedProvider } = require('react-apollo/test-utils')
 const { path, insertAll, reject, isNil, find } = require('ramda')
 const { InMemoryCache } = require('apollo-cache-inmemory')
 
@@ -43,6 +43,8 @@ const customRender = (node, options = {}) => {
     messages: messages,
   }
 
+  const Provider = options.MockedProvider || MockedProvider
+
   const apolloProps = options.graphql
     ? Object.assign({}, { addTypename: false }, options.graphql)
     : { mocks: [], addTypename: false }
@@ -58,7 +60,7 @@ const customRender = (node, options = {}) => {
     React.createElement(
       IntlProvider,
       intlProps,
-      React.createElement(MockedProvider, apolloProps, node)
+      React.createElement(Provider, apolloProps, node)
     ),
     options
   )

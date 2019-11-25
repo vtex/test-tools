@@ -101,13 +101,14 @@ test('should render the example translated to portuguese', () => {
 
 #### GraphQL
 
-We automatically wrap your component with an Apollo's [`MockProvider`](https://www.apollographql.com/docs/react/recipes/testing.html).
+We automatically wrap your component with an Apollo's [`MockedProvider`](https://www.apollographql.com/docs/react/development-testing/testing/). Just import it from `@apollo/react-testing` and pass it as the `MockedProvider` option.
 
 You can pass props to it using the `graphql` option. Example:
 
 ```js
 import React from 'react'
 import { render, flushPromises } from '@vtex/test-tools/react'
+import { MockedProvider } from '@apollo/react-testing'
 import GraphqlComponent from './GraphqlComponent'
 import GET_BOOKS from './getBooks.graphql'
 
@@ -131,7 +132,8 @@ test('should render mock graphql responses', async () => {
   }
 
   const { getByText } = render(<GraphqlComponent />, {
-    graphql: { mocks: [bookMock] }
+    graphql: { mocks: [bookMock] },
+    MockedProvider,
   })
 
   expect(getByText(/Loading/)).toBeDefined()
