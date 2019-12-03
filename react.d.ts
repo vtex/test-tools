@@ -1,5 +1,5 @@
 import { RenderOptions, RenderResult } from "@testing-library/react";
-import { MockedProviderProps } from "react-apollo/test-utils";
+import { MockedProviderProps } from "@apollo/react-testing";
 
 export * from "@testing-library/react";
 
@@ -10,13 +10,20 @@ interface Messages {
   [id: string]: string;
 }
 
-interface TestToolsRenderOptions extends RenderOptions {
-  /** Props to be passed to MockedProvider from react-apollo. */
-  graphql?: MockedProviderProps;
+type TestToolsRenderOptions = BaseTestToolsRenderOptions | GraphQLTestToolsRenderOptions
+
+interface BaseTestToolsRenderOptions extends RenderOptions {
   /** A locale string, eg: `pt-BR`, `es`. Default: `en`*/
   locale?: string;
   /** A JSON translation to be used. Default: `messages/en.json` or another locale if specified in the `locale` option. */
   messages?: Messages;
+}
+
+interface GraphQLTestToolsRenderOptions extends BaseTestToolsRenderOptions {
+  /** Props to be passed to MockedProvider */
+  graphql: MockedProviderProps;
+  /** The MockedProvider from @apollo/react-testing */
+  MockedProvider: React.ComponentType;
 }
 
 /**
