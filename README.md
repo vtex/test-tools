@@ -178,6 +178,8 @@ These are some common use cases that might be helpful to see how it's done:
 
 ### [Testing a React component](https://github.com/klzns/test-repo/blob/master/react/JsComponent.test.js)
 
+### [Testing a React Hook](./examples/hooks/)
+
 ### [TypeScript](./examples/typescript/)
 
 ### [Testing a component using CSS Modules](https://github.com/klzns/test-repo/blob/master/react/CssComponent.test.js)
