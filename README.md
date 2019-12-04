@@ -67,6 +67,31 @@ This module uses `react-testing-library` under the hood, so most of its API it's
 
 There are few new features added to it:
 
+### React Hooks
+
+You can also test your custom hooks.
+
+#### Example
+
+```js
+import { renderHook, act } from '@vtex/test-tools/react'
+import useCustomHook from "./useCustomHook"
+
+it('counter should be one', async () => {
+  const { result } = renderHook(() => useCustomHook())
+
+  // This waits for the useEffect hook to be triggered and mutate hook state
+  await act(async () => await Promise.resolve())
+
+  expect(result.current).toBe(1)
+})
+```
+
+<!-- https://react-hooks-testing-library.com/ -->
+The module uses `@react-testing-library/react-hooks` under the hood, to understand the reactHook function you can read [its doc](https://react-hooks-testing-library.com/reference/api)
+
+There are few new features added to it:
+
 #### Messages
 
 We will automatically wrap your component with an `IntlProvider` with your app's `messages/en-US.json` messages.

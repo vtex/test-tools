@@ -2,6 +2,7 @@ import { RenderOptions, RenderResult } from "@testing-library/react";
 import { MockedProviderProps } from "@apollo/react-testing";
 
 export * from "@testing-library/react";
+export { renderHook } from "@testing-library/react-hooks";
 
 /**
  *

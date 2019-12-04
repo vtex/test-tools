@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Export `@react-testing-library/react-hooks` out of the box. You can import `renderHooks` now.
+- Export `@react-testing-library/react-hooks` out of the box. You can import `renderHook` now.
 
 ## [2.0.0] - 2019-12-03
 
