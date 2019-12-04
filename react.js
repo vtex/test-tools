@@ -1,5 +1,6 @@
 const React = require('react')
 const reactTestingLibrary = require('@testing-library/react')
+const reactHooksTestingLibrary = require('@testing-library/react-hooks')
 const { MockedProvider } = require('@apollo/react-testing')
 const { IntlProvider } = require('react-intl')
 const { path, insertAll, reject, isNil, find } = require('ramda')
@@ -78,7 +79,7 @@ const customRender = (node, options = {}) => {
 const flushPromises = () => new Promise(resolve => setImmediate(resolve))
 
 // re-export everything
-module.exports = Object.assign({}, reactTestingLibrary, {
+module.exports = Object.assign({}, reactTestingLibrary, reactHooksTestingLibrary, {
   render: customRender,
   flushPromises,
 })
