@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.1] - 2019-12-05
+### Fixed
+- Use babel plugins to support tests with optional chaining or nullish coalescing.
+
 ## [2.1.0] - 2019-12-04
 ### Added
 - Export `@react-testing-library/react-hooks` out of the box. You can import `renderHook` now.
