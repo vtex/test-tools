@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0] - 2019-12-17
+### Changed
+- Support react-intl@3.x.
+- Make @apollo/react-testing and react-intl peer dependencies.
+
 ## [2.1.1] - 2019-12-05
 ### Fixed
 - Use babel plugins to support tests with optional chaining or nullish coalescing.

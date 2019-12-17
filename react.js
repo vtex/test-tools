@@ -44,8 +44,6 @@ const customRender = (node, options = {}) => {
     messages: messages,
   }
 
-  const Provider = options.MockedProvider || MockedProvider
-
   const apolloProps = options.graphql
     ? Object.assign({}, { addTypename: false }, options.graphql)
     : { mocks: [], addTypename: false }
@@ -61,7 +59,7 @@ const customRender = (node, options = {}) => {
     React.createElement(
       IntlProvider,
       intlProps,
-      React.createElement(Provider, apolloProps, node)
+      React.createElement(MockedProvider, apolloProps, node)
     ),
     options
   )

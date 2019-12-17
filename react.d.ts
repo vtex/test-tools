@@ -23,8 +23,6 @@ interface BaseTestToolsRenderOptions extends RenderOptions {
 interface GraphQLTestToolsRenderOptions extends BaseTestToolsRenderOptions {
   /** Props to be passed to MockedProvider */
   graphql: MockedProviderProps;
-  /** The MockedProvider from @apollo/react-testing */
-  MockedProvider: React.ComponentType;
 }
 
 /**
