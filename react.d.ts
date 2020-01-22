@@ -33,6 +33,11 @@ export function render(
   options?: TestToolsRenderOptions
 ): RenderResult;
 
+/**
+ * Run a Promise that resolves in the next tick.
+ */
+export function flushPromises(): Promise<void>
+
 // Exporting type definitions for Jest so that TypeScript Compiler can find it.
 // This is necessary for testing projects that use TypeScript.
 // Trying to find a better solution, check (https://github.com/vtex/test-tools/issues/7)

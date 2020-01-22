@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.1] - 2020-01-22
+### Fixed
+- Add missing type for `flushPromises`.
+- Install docs.
+
 ## [3.0.0] - 2019-12-17
 ### Changed
 - Support react-intl@3.x.
