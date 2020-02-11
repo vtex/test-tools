@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Always taking the default locale even when a custom locale was set.
+
 ## [3.0.1] - 2020-01-22
 ### Fixed
 - Add missing type for `flushPromises`.
