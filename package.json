@@ -1,17 +1,15 @@
 {
   "name": "@vtex/test-tools",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "VTEX IO testing tools",
   "bin": {
     "vtex-test-tools": "./bin/vtex-test-tools.js"
   },
   "dependencies": {
-    "@babel/core": "^7.7.4",
+    "@babel/core": "^7.8.4",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.7.4",
-    "@babel/plugin-proposal-optional-chaining": "^7.7.4",
     "@babel/plugin-transform-runtime": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.7.4",
     "@babel/preset-typescript": "^7.7.4",
     "@testing-library/jest-dom": "^4.1.0",
