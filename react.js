@@ -36,7 +36,7 @@ const customRender = (node, options = {}) => {
     ? require(paths.resolveAppPath(`../messages/${locale}.json`))
     : options.messages
 
-  const intlProps = { locale, messages }
+  const intlProps = { locale, messages, textComponent: 'span' }
 
   const apolloProps = options.graphql
     ? Object.assign({}, { addTypename: false }, options.graphql)
