@@ -32,9 +32,7 @@ const generateCacheKey = value => {
 
 const customRender = (node, options = {}) => {
   const locale = getLocale(path(['locale'], options)) || 'en'
-  const messages = options.loadMessages
-    ? require(paths.resolveAppPath(`../messages/${locale}.json`))
-    : options.messages
+  const messages = options.messages || require(paths.resolveAppPath(`../messages/${locale}.json`))
 
   const intlProps = { locale, messages, textComponent: 'span' }
 

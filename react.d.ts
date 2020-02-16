@@ -18,7 +18,6 @@ interface BaseTestToolsRenderOptions extends RenderOptions {
   locale?: string;
   /** A JSON translation to be used. Default: `messages/en.json` or another locale if specified in the `locale` option. */
   messages?: Messages;
-  loadMessages?: boolean
 }
 
 interface GraphQLTestToolsRenderOptions extends BaseTestToolsRenderOptions {
