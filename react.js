@@ -1,5 +1,3 @@
-console.log(module.paths)
-
 const React = require('react')
 const reactTestingLibrary = require('@testing-library/react')
 const reactHooksTestingLibrary = require('@testing-library/react-hooks')
