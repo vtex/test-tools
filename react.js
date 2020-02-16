@@ -31,15 +31,12 @@ const generateCacheKey = value => {
 }
 
 const customRender = (node, options = {}) => {
-  const locale = getLocale(path(['locale'], options))
-  const messages = locale
+  const locale = getLocale(path(['locale'], options)) || 'en'
+  const messages = options.loadMessages
     ? require(paths.resolveAppPath(`../messages/${locale}.json`))
-    : {}
+    : options.messages
 
-  const intlProps = {
-    locale: locale || 'en',
-    messages: messages,
-  }
+  const intlProps = { locale, messages }
 
   const apolloProps = options.graphql
     ? Object.assign({}, { addTypename: false }, options.graphql)
