@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.1.0] - 2020-03-30
+
 ### Added
 - Get the `coverageThreshold` configuration from `package.json` file.
 
