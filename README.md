@@ -7,7 +7,7 @@
 ## Install
 
 ```sh
-$ yarn add @vtex/test-tools apollo-client apollo-cache-inmemory @apollo/react-testing react-intl graphql @types/jest @types/node @types/react @types/react-intl -D
+$ yarn add @vtex/test-tools apollo-client apollo-cache-inmemory @apollo/react-testing react-intl@3 graphql @types/jest @types/node @types/react @types/react-intl@3 -D
 ```
 
 ## Usage
