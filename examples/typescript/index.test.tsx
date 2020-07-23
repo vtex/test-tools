@@ -1,9 +1,10 @@
-import React from "react";
-import { render } from "../../react";
-import Component from "./index";
+import React from 'react'
+import { render } from '@vtex/test-tools/react'
 
-test("should render the example in TypeScript", () => {
-  const { getByText } = render(<Component />);
+import Component from './index'
 
-  expect(getByText(/This is an example/)).toBeDefined();
-});
+test('should render the example in TypeScript', () => {
+  const { getByText } = render(<Component />)
+
+  expect(getByText(/This is an example/)).toBeDefined()
+})

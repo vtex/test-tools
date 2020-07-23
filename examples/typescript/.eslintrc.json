@@ -1,0 +1,5 @@
+{
+  "parserOptions": {
+    "project": "./examples/typescript/tsconfig.json"
+  }
+}

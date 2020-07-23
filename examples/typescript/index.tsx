@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from "react"
-import { FormattedMessage } from "react-intl"
+import React, { FunctionComponent } from 'react'
+import { FormattedMessage } from 'react-intl'
 
 const HelloWorld: FunctionComponent = () => {
   return (
