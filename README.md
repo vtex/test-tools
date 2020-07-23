@@ -1,13 +1,23 @@
 # VTEX Test Tools
 
-![Npm badge](https://img.shields.io/npm/v/@vtex/test-tools.svg?style=flat-square)
+![Npm badge](https://img.shields.io/npm/v/@vtex/test-tools.svg?style=flat-square) ![CI](https://github.com/vtex/test-tools/workflows/CI/badge.svg?branch=master)
 
 > Add tests to your VTEX IO app in an instant 🚀
+
+## Table of Contents
+
+- [Install](#Install)
+- [Usage](#Usage)
+- [API](#API)
+  - [React Component](#react-module)
+  - [React Hooks](#react-hooks)
+  - [Messages I18n](#messages)
+  - [GraphQL](#graphql)
 
 ## Install
 
 ```sh
-$ yarn add @vtex/test-tools apollo-client apollo-cache-inmemory @apollo/react-testing react-intl@3 graphql @types/jest @types/node @types/react @types/react-intl@3 -D
+yarn add -D @vtex/test-tools @apollo/react-testing react-intl@3
 ```
 
 ## Usage
@@ -15,7 +25,12 @@ $ yarn add @vtex/test-tools apollo-client apollo-cache-inmemory @apollo/react-te
 Add a new script to your `react/package.json`:
 
 ```json
-  "test": "vtex-test-tools test"
+{
+  "name": "my-io-app",
+  "scripts": {
+    "test": "vtex-test-tools test"
+  }
+}
 ```
 
 Add these lines to your `.vtexignore`:
@@ -32,7 +47,7 @@ react/**/*.test.tsx
 Run in your terminal:
 
 ```sh
-$ yarn test
+yarn test
 ```
 
 If you're using TypeScript there are a few [more steps](./examples/typescript/).
@@ -49,7 +64,7 @@ The module `react` makes it easy to test VTEX IO React apps.
 
 #### Example
 
-```js
+```jsx
 import React from 'react'
 import { render } from '@vtex/test-tools/react'
 import HelloWorld from './HelloWorld'
@@ -63,9 +78,10 @@ test('should render the Hello!', () => {
 })
 ```
 
-This module uses `react-testing-library` under the hood, so most of its API it's the same: [read the docs](https://testing-library.com/docs/intro).
+This module uses `@testing-library/react` (RTL) under the hood, so most of its API is the same ([read their docs here](https://testing-library.com/docs/intro)).
 
-There are few new features added to it:
+We added a few more features to the regular `render` function from RTL, such as a `graphql` and `locale` option. You can see more about them
+down below.
 
 ### React Hooks
 
@@ -73,9 +89,9 @@ You can also test your custom hooks.
 
 #### Example
 
-```js
+```jsx
 import { renderHook, act } from '@vtex/test-tools/react'
-import useCustomHook from "./useCustomHook"
+import useCustomHook from './useCustomHook'
 
 it('counter should be one', async () => {
   const { result } = renderHook(() => useCustomHook())
@@ -88,25 +104,26 @@ it('counter should be one', async () => {
 ```
 
 <!-- https://react-hooks-testing-library.com/ -->
-The module uses `@react-testing-library/react-hooks` under the hood, to understand the reactHook function you can read [its doc](https://react-hooks-testing-library.com/reference/api)
+The module uses `@react-testing-library/react-hooks` under the hood, to understand the reactHook function you can read [their docs here](https://react-hooks-testing-library.com/reference/api).
 
-There are few new features added to it:
-
-#### Messages
+### Messages
 
 We will automatically wrap your component with an `IntlProvider` with your app's `messages/en-US.json` messages.
 
 You can change the default locale being used adding a config to your `package.json`. Example:
 
-```
+```json
+{
+  "name": "my-awesome-io-app",
   "vtexTestTools": {
     "defaultLocale": "pt-BR"
   }
+}
 ```
 
 If you want to change the locale just in a test, you may pass the `locale` option. Example:
 
-```js
+```jsx
 import React from 'react'
 import { render } from '@vtex/test-tools/react'
 import HelloWorld from './HelloWorld'
@@ -124,16 +141,15 @@ test('should render the example translated to portuguese', () => {
 
 ```
 
-#### GraphQL
+### GraphQL
 
-We automatically wrap your component with an Apollo's [`MockedProvider`](https://www.apollographql.com/docs/react/development-testing/testing/). Just import it from `@apollo/react-testing` and pass it as the `MockedProvider` option.
+We automatically wrap your component with an Apollo's [`MockedProvider`](https://www.apollographql.com/docs/react/development-testing/testing/).
 
-You can pass props to it using the `graphql` option. Example:
+You can pass your mocked queries to it using the `graphql` option. Example:
 
 ```js
 import React from 'react'
 import { render, flushPromises } from '@vtex/test-tools/react'
-import { MockedProvider } from '@apollo/react-testing'
 import GraphqlComponent from './GraphqlComponent'
 import GET_BOOKS from './getBooks.graphql'
 
@@ -158,7 +174,6 @@ test('should render mock graphql responses', async () => {
 
   const { getByText } = render(<GraphqlComponent />, {
     graphql: { mocks: [bookMock] },
-    MockedProvider,
   })
 
   expect(getByText(/Loading/)).toBeDefined()

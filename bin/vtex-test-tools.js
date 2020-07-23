@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+
+/* eslint-disable no-console, global-require */
+
 'use strict'
 
 const args = process.argv.slice(2)
@@ -19,8 +22,10 @@ switch (script) {
       )
       process.exit(1)
     }
+
     break
   }
+
   default:
     console.log(`Unknown script "${script}".`)
     break

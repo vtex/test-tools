@@ -4,9 +4,9 @@ const fs = require('fs')
 const path = require('path')
 
 const appDirectory = fs.realpathSync(process.cwd())
-const resolveAppPath = relative => path.resolve(appDirectory, relative)
+const resolveAppPath = (relative) => path.resolve(appDirectory, relative)
 
-const pathExists = relative => {
+const pathExists = (relative) => {
   try {
     fs.accessSync(resolveAppPath(relative), fs.constants.F_OK)
 

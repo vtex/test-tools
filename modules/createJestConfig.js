@@ -1,23 +1,23 @@
-'use strict'
+/* eslint-disable global-require */
 
-const fs = require('fs')
-const path = require('path')
-const paths = require('./paths')
+'use strict'
 
 module.exports = (resolve, resolveAppPath) => {
   const pkg = require(resolveAppPath('package.json'))
 
   let setupFilesAfterEnv = [resolve('modules/jest/setup.js')]
+
   if (pkg.jest && pkg.jest.setupFilesAfterEnv) {
     setupFilesAfterEnv = setupFilesAfterEnv.concat(pkg.jest.setupFilesAfterEnv)
   }
+
   const coverageThreshold =
     pkg.jest && pkg.jest.coverageThreshold ? pkg.jest.coverageThreshold : {}
 
-  let config = {
+  const config = {
     rootDir: resolveAppPath('.'),
-    setupFilesAfterEnv: setupFilesAfterEnv,
-    coverageThreshold: coverageThreshold,
+    setupFilesAfterEnv,
+    coverageThreshold,
     moduleNameMapper: {
       '^.+\\.css$': require.resolve('identity-obj-proxy'),
       '^react$': require.resolve('react'),
