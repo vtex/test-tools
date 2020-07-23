@@ -1,10 +1,7 @@
 {
-  "extends": "vtex-react",
+  "extends": "vtex",
   "env": {
     "browser": true,
     "jest": true
-  },
-  "rules": {
-    "import/no-nodejs-modules": "off"
   }
 }
