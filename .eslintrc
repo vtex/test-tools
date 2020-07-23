@@ -4,9 +4,6 @@
     "browser": true,
     "jest": true
   },
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
   "rules": {
     "import/no-nodejs-modules": "off"
   }
