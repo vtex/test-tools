@@ -22,8 +22,17 @@
   "bin": {
     "vtex-test-tools": "./bin/vtex-test-tools.js"
   },
+  "files": [
+    "dist",
+    "bin",
+    "scripts",
+    "react.js",
+    "react.d.ts",
+    "README.md"
+  ],
   "scripts": {
-    "lint": "eslint --ext js,jsx,ts,tsx .",
+    "build": "tsc -d",
+    "lint": "tsc --noEmit && eslint --ext js,jsx,ts,tsx .",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json}\""
   },
   "husky": {
@@ -65,7 +74,7 @@
     "react-apollo": "^3.1.3",
     "react-dom": "^16.9.0",
     "react-test-renderer": "^16.13.1",
-    "typescript": "^3.7.3"
+    "typescript": "^3.9.7"
   },
   "devDependencies": {
     "@apollo/react-testing": "^3.1.3",
@@ -73,7 +82,7 @@
     "@vtex/prettier-config": "^0.3.1",
     "@vtex/tsconfig": "^0.5.0",
     "eslint": "^7.6.0",
-    "eslint-config-vtex": "^12.8.1",
+    "eslint-config-vtex-react": "^6.7.4",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",

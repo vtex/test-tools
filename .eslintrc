@@ -1,6 +1,8 @@
 {
-  "extends": "vtex",
+  "extends": "vtex-react",
   "rules": {
-    "global-require": "off"
+    "global-require": "off",
+    "import/no-nodejs-modules": "off",
+    "spaced-comment": "off"
   }
 }
