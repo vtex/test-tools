@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+
 const React = require('react')
 const reactTestingLibrary = require('@testing-library/react')
 const reactHooksTestingLibrary = require('@testing-library/react-hooks')
@@ -10,19 +12,21 @@ const paths = require('./modules/paths')
 
 const pkg = require(paths.resolveAppPath('package.json'))
 
-const getLocale = optionsLocale => {
+const getLocale = (optionsLocale) => {
   const pkgLocale = path(['vtexTestTools', 'defaultLocale'], pkg)
   const languages = [optionsLocale, pkgLocale, 'en', 'en-US']
 
   const locales = reject(isNil, languages)
-  const localeExists = locale => paths.pathExists(`../messages/${locale}.json`)
+  const localeExists = (locale) =>
+    paths.pathExists(`../messages/${locale}.json`)
 
   return find(localeExists, locales)
 }
 
 // Creating apollo-client cache like render-runtime
-const generateCacheKey = value => {
+const generateCacheKey = (value) => {
   const { cacheId, __typename } = value || {}
+
   if (value && cacheId && __typename) {
     return `${__typename}:${cacheId}`
   }
@@ -38,11 +42,11 @@ const customRender = (node, options = {}) => {
 
   const intlProps = {
     locale: locale || 'en',
-    messages: messages,
+    messages,
   }
 
   const apolloProps = options.graphql
-    ? Object.assign({}, { addTypename: false }, options.graphql)
+    ? { addTypename: false, ...options.graphql }
     : { mocks: [], addTypename: false }
 
   const cache = new InMemoryCache({
@@ -63,7 +67,7 @@ const customRender = (node, options = {}) => {
 
   return {
     ...rendered,
-    rerender: newUi =>
+    rerender: (newUi) =>
       customRender(newUi, {
         container: rendered.container,
         baseElement: rendered.baseElement,
@@ -71,15 +75,12 @@ const customRender = (node, options = {}) => {
   }
 }
 
-const flushPromises = () => new Promise(resolve => setImmediate(resolve))
+const flushPromises = () => new Promise((resolve) => setImmediate(resolve))
 
 // re-export everything
-module.exports = Object.assign(
-  {},
-  reactTestingLibrary,
-  reactHooksTestingLibrary,
-  {
-    render: customRender,
-    flushPromises,
-  }
-)
+module.exports = {
+  ...reactTestingLibrary,
+  ...reactHooksTestingLibrary,
+  render: customRender,
+  flushPromises,
+}
