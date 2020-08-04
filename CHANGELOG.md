@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.2.0] - 2020-08-04
+### Added
+- Export a `hooks` bag of methods to test react hooks.
+
+### Fixed
+- `jest` and `@testing-library` typings.
+- Typings for `jest-dom` matchers.
+
+### Changed
+- Remove unneeded dependencies
+
 ## [3.1.0] - 2020-03-30
 
 ### Added

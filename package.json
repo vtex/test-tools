@@ -1,65 +1,30 @@
 {
   "name": "@vtex/test-tools",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "VTEX IO testing tools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vtex/test-tools"
+  },
+  "keywords": [
+    "react",
+    "vtex",
+    "io",
+    "test",
+    "graphl",
+    "typescript"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vtex/test-tools/issues"
+  },
+  "homepage": "https://github.com/vtex/test-tools#readme",
   "bin": {
     "vtex-test-tools": "./bin/vtex-test-tools.js"
   },
   "scripts": {
-    "lint": "eslint ."
-  },
-  "dependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/plugin-transform-runtime": "^7.7.4",
-    "@babel/preset-env": "^7.8.4",
-    "@babel/preset-react": "^7.7.4",
-    "@babel/preset-typescript": "^7.7.4",
-    "@testing-library/jest-dom": "^4.1.0",
-    "@testing-library/react": "^9.1.3",
-    "@testing-library/react-hooks": "^3.2.1",
-    "@types/graphql": "^14.0.7",
-    "@types/jest": "^24.0.11",
-    "@types/node": "^11.11.1",
-    "@types/prop-types": "^15.7.0",
-    "@types/react": "^16.8.7",
-    "apollo-cache-inmemory": "^1.6.3",
-    "apollo-client": "^2.6.4",
-    "babel-jest": "^24.4.0",
-    "babel-plugin-dynamic-import-node": "^2.2.0",
-    "fs-extra": "~5.0.0",
-    "graphql": "~0.13.2",
-    "graphql-tag": "~2.8.0",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.4.0",
-    "jest-transform-graphql": "^2.1.0",
-    "ramda": "^0.26.1",
-    "react": "^16.9.0",
-    "react-apollo": "^3.1.3",
-    "react-dom": "^16.9.0",
-    "react-test-renderer": "^16.12.0",
-    "regenerator-runtime": "^0.13.1",
-    "typescript": "^3.7.3"
-  },
-  "resolutions": {
-    "babel-core": "^7.0.0-bridge.0"
-  },
-  "devDependencies": {
-    "@apollo/react-testing": "^3.1.3",
-    "@babel/runtime": "^7.7.4",
-    "@vtex/prettier-config": "^0.3.1",
-    "@vtex/tsconfig": "^0.5.0",
-    "eslint": "^7.5.0",
-    "eslint-config-vtex": "^12.7.1",
-    "eslint-config-vtex-react": "^6.7.1",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5",
-    "react-intl": "^3.9.2"
-  },
-  "peerDependencies": {
-    "@apollo/react-testing": "^3.1.3",
-    "react-intl": "^3.9.2"
+    "lint": "eslint --ext js,jsx,ts,tsx .",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json}\""
   },
   "husky": {
     "hooks": {
@@ -75,22 +40,47 @@
       "prettier --write"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/vtex/test-tools.git"
+  "dependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
+    "@testing-library/jest-dom": "^5.11.2",
+    "@testing-library/react": "^10.4.7",
+    "@testing-library/react-hooks": "^3.4.1",
+    "@types/graphql": "^14.5.0",
+    "@types/jest": "^26.0.8",
+    "@types/node": "^14.0.27",
+    "@types/react": "^16.9.44",
+    "apollo-cache-inmemory": "^1.6.3",
+    "apollo-client": "^2.6.4",
+    "babel-jest": "^24.4.0",
+    "graphql": "^14.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.0.0",
+    "jest-transform-graphql": "^2.1.0",
+    "react": "^16.9.0",
+    "react-apollo": "^3.1.3",
+    "react-dom": "^16.9.0",
+    "react-test-renderer": "^16.13.1",
+    "typescript": "^3.7.3"
   },
-  "keywords": [
-    "react",
-    "vtex",
-    "io",
-    "test",
-    "graphl",
-    "typescript"
-  ],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vtex/test-tools/issues"
+  "devDependencies": {
+    "@apollo/react-testing": "^3.1.3",
+    "@babel/runtime": "^7.7.4",
+    "@vtex/prettier-config": "^0.3.1",
+    "@vtex/tsconfig": "^0.5.0",
+    "eslint": "^7.6.0",
+    "eslint-config-vtex": "^12.8.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "react-intl": "^3.9.2"
   },
-  "homepage": "https://github.com/vtex/test-tools#readme"
+  "peerDependencies": {
+    "@apollo/react-testing": "^3.1.3",
+    "react-intl": "^3.9.2"
+  }
 }

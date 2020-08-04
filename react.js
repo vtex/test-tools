@@ -1,11 +1,8 @@
-/* eslint-disable global-require */
-
 const React = require('react')
 const reactTestingLibrary = require('@testing-library/react')
-const reactHooksTestingLibrary = require('@testing-library/react-hooks')
+const hooks = require('@testing-library/react-hooks')
 const { MockedProvider } = require('@apollo/react-testing')
 const { IntlProvider } = require('react-intl')
-const { path, find, isNil, reject } = require('ramda')
 const { InMemoryCache } = require('apollo-cache-inmemory')
 
 const paths = require('./modules/paths')
@@ -13,14 +10,17 @@ const paths = require('./modules/paths')
 const pkg = require(paths.resolveAppPath('package.json'))
 
 const getLocale = (optionsLocale) => {
-  const pkgLocale = path(['vtexTestTools', 'defaultLocale'], pkg)
-  const languages = [optionsLocale, pkgLocale, 'en', 'en-US']
+  const locales = [
+    optionsLocale,
+    pkg.vtexTestTools && pkg.vtexTestTools.defaultLocale,
+    'en',
+    'en-US',
+  ].filter(Boolean)
 
-  const locales = reject(isNil, languages)
   const localeExists = (locale) =>
     paths.pathExists(`../messages/${locale}.json`)
 
-  return find(localeExists, locales)
+  return locales.find(localeExists)
 }
 
 // Creating apollo-client cache like render-runtime
@@ -35,7 +35,7 @@ const generateCacheKey = (value) => {
 }
 
 const customRender = (node, options = {}) => {
-  const locale = getLocale(path(['locale'], options))
+  const locale = getLocale(options.locale)
   const messages = locale
     ? require(paths.resolveAppPath(`../messages/${locale}.json`))
     : {}
@@ -80,7 +80,8 @@ const flushPromises = () => new Promise((resolve) => setImmediate(resolve))
 // re-export everything
 module.exports = {
   ...reactTestingLibrary,
-  ...reactHooksTestingLibrary,
   render: customRender,
   flushPromises,
+  renderHook: hooks.renderHook,
+  hooks,
 }

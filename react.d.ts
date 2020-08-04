@@ -1,12 +1,14 @@
 import { RenderOptions, RenderResult } from '@testing-library/react'
 import { MockedProviderProps } from '@apollo/react-testing'
+import * as hooks from '@testing-library/react-hooks'
+import '@testing-library/jest-dom'
+
+const { renderHook } = hooks
+
+export { hooks, renderHook }
 
 export * from '@testing-library/react'
-export { renderHook } from '@testing-library/react-hooks'
 
-/**
- *
- */
 interface Messages {
   [id: string]: string
 }
