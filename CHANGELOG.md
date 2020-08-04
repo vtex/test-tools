@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - `jest` and `@testing-library` typings.
+- Typings for `jest-dom` matchers.
 
 ### Changed
 - Remove unneeded dependencies

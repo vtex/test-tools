@@ -1,6 +1,7 @@
 import { RenderOptions, RenderResult } from '@testing-library/react'
 import { MockedProviderProps } from '@apollo/react-testing'
 import * as hooks from '@testing-library/react-hooks'
+import '@testing-library/jest-dom'
 
 const { renderHook } = hooks
 

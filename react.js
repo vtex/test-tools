@@ -10,10 +10,13 @@ const paths = require('./modules/paths')
 const pkg = require(paths.resolveAppPath('package.json'))
 
 const getLocale = (optionsLocale) => {
-  const pkgLocale = pkg.vtexTestTools.defaultLocale
-  const languages = [optionsLocale, pkgLocale, 'en', 'en-US']
+  const locales = [
+    optionsLocale,
+    pkg.vtexTestTools && pkg.vtexTestTools.defaultLocale,
+    'en',
+    'en-US',
+  ].filter(Boolean)
 
-  const locales = languages.filter((lang) => Boolean(lang))
   const localeExists = (locale) =>
     paths.pathExists(`../messages/${locale}.json`)
 
