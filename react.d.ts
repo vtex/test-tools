@@ -3,6 +3,7 @@ import { MockedProviderProps } from '@apollo/react-testing'
 import * as hooks from '@testing-library/react-hooks'
 
 const { renderHook } = hooks
+
 export { hooks, renderHook }
 
 export * from '@testing-library/react'

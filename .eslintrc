@@ -1,7 +1,6 @@
 {
   "extends": "vtex",
-  "env": {
-    "browser": true,
-    "jest": true
+  "rules": {
+    "global-require": "off"
   }
 }

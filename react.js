@@ -1,6 +1,6 @@
 const React = require('react')
 const reactTestingLibrary = require('@testing-library/react')
-const reactHooksTestingLibrary = require('@testing-library/react-hooks')
+const hooks = require('@testing-library/react-hooks')
 const { MockedProvider } = require('@apollo/react-testing')
 const { IntlProvider } = require('react-intl')
 const { InMemoryCache } = require('apollo-cache-inmemory')
@@ -77,7 +77,8 @@ const flushPromises = () => new Promise((resolve) => setImmediate(resolve))
 // re-export everything
 module.exports = {
   ...reactTestingLibrary,
-  ...reactHooksTestingLibrary,
   render: customRender,
   flushPromises,
+  renderHook: hooks.renderHook,
+  hooks,
 }

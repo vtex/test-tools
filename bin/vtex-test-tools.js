@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-'use strict'
 
 const args = process.argv.slice(2)
 
-const script = args[0]
+const [script] = args
 
 switch (script) {
   case 'test': {
@@ -12,8 +11,8 @@ switch (script) {
     try {
       executeScript(...args.slice(1))
     } catch (e) {
-      console.log(`An error occurred while running the script "${script}".\n`)
-      console.log(
+      console.info(`An error occurred while running the script "${script}".\n`)
+      console.info(
         'If you think this is a bug in our tools, feel free to file a bug report at',
         'https://www.github.com/vtex/react-testing/issues\n'
       )
@@ -24,6 +23,6 @@ switch (script) {
   }
 
   default:
-    console.log(`Unknown script "${script}".`)
+    console.error(`Unknown script "${script}".`)
     break
 }
