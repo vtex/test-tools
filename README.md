@@ -89,22 +89,25 @@ You can also test your custom hooks.
 
 #### Example
 
-```jsx
-import { renderHook, act } from '@vtex/test-tools/react'
+```js
+import { hooks } from '@vtex/test-tools/react'
 import useCustomHook from './useCustomHook'
+
+const { renderHook, act } = hooks
 
 it('counter should be one', async () => {
   const { result } = renderHook(() => useCustomHook())
 
   // This waits for the useEffect hook to be triggered and mutate hook state
-  await act(async () => await Promise.resolve())
+  await act(() => Promise.resolve())
 
   expect(result.current).toBe(1)
 })
 ```
 
 <!-- https://react-hooks-testing-library.com/ -->
-The module uses `@react-testing-library/react-hooks` under the hood, to understand the reactHook function you can read [their docs here](https://react-hooks-testing-library.com/reference/api).
+
+The module uses `@react-testing-library/react-hooks` under the hood, to understand the reactHook function you can read [its doc](https://react-hooks-testing-library.com/reference/api)
 
 ### Messages
 
@@ -129,16 +132,12 @@ import { render } from '@vtex/test-tools/react'
 import HelloWorld from './HelloWorld'
 
 test('should render the example translated to portuguese', () => {
-  const { getByText } = render(
-    <HelloWorld />,
-    { locale: 'pt' }
-  )
+  const { getByText } = render(<HelloWorld />, { locale: 'pt' })
 
   const element = getByText(/Olá!/)
 
   expect(element).toBeDefined()
 })
-
 ```
 
 ### GraphQL
@@ -166,10 +165,10 @@ test('should render mock graphql responses', async () => {
           {
             id: 10,
             title: 'Hello',
-          }
-        ]
-      }
-    }
+          },
+        ],
+      },
+    },
   }
 
   const { getByText } = render(<GraphqlComponent />, {

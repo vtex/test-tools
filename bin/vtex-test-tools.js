@@ -1,7 +1,4 @@
 #!/usr/bin/env node
-
-/* eslint-disable no-console, global-require */
-
 'use strict'
 
 const args = process.argv.slice(2)
