@@ -28,7 +28,6 @@ const getLocale = (optionsLocale?: string) => {
 
 // Creating apollo-client cache like render-runtime
 const generateCacheKey = (value: IdGetterObj & { cacheId?: string }) => {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   const { cacheId, __typename: typename } = value || {}
 
   if (value && cacheId && typename) {
@@ -73,7 +72,7 @@ const customRender = (
 
   const apolloProps = options.graphql
     ? { addTypename: false, ...options.graphql }
-    : { mocks: [], addTypename: false }
+    : { addTypename: false, mocks: [] }
 
   const cache = new InMemoryCache({
     addTypename: apolloProps.addTypename,
