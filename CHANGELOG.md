@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.2.1] - 2020-08-06
+### Changed
+- Convert project files to TypeScript.
+
 ## [3.2.0] - 2020-08-04
 ### Added
 - Export a `hooks` bag of methods to test react hooks.

@@ -13,14 +13,17 @@ const path = require('path')
 
 const jest = require('jest')
 
-const paths = require('../modules/paths')
-const createJestConfig = require('../modules/createJestConfig')
+const paths = require(path.resolve(__dirname, '../dist/modules/paths'))
+const createJestConfig = require(path.resolve(
+  __dirname,
+  '../dist/modules/createJestConfig'
+))
 
 function startTest(...processArgs) {
   const args = processArgs ? processArgs.slice(0) : []
 
   const config = createJestConfig(
-    (relativePath) => path.resolve(__dirname, '..', relativePath),
+    (relativePath) => path.resolve(__dirname, '..', 'dist', relativePath),
     paths.resolveAppPath
   )
 

@@ -14,7 +14,7 @@
     "@types/jest": "^24.0.11",
     "@types/node": "^11.11.1",
     "@types/react": "^16.8.7",
-    "@vtex/test-tools": "3.0.0",
+    "@vtex/test-tools": "^3.0.0",
     "apollo-client": "^2.5.1",
     "typescript": "^3.3.3333"
   }

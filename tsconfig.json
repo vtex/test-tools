@@ -8,5 +8,6 @@
     "noUnusedParameters": false,
     "allowJs": true,
     "types": ["jest", "node"]
-  }
+  },
+  "include": ["./src/**/*"]
 }
