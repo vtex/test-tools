@@ -11,6 +11,13 @@ module.exports = babelJest.createTransformer({
   plugins: [
     require.resolve('@babel/plugin-proposal-class-properties'),
     require.resolve('@babel/plugin-transform-runtime'),
+    // Add support for const enums in tests
+    [
+      require.resolve('babel-plugin-const-enum'),
+      {
+        transform: 'constObject',
+      },
+    ],
   ],
   babelrc: false,
   configFile: false,

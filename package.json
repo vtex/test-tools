@@ -32,6 +32,7 @@
   ],
   "scripts": {
     "build": "tsc -d",
+    "dev": "tsc -w",
     "lint": "tsc --noEmit && eslint --ext js,jsx,ts,tsx .",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json}\"",
     "prepublishOnly": "run-s lint build"
@@ -67,6 +68,7 @@
     "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.6.4",
     "babel-jest": "^24.4.0",
+    "babel-plugin-const-enum": "^1.0.1",
     "graphql": "^14.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.0.0",
