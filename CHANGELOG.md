@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.3.2] - 2020-08-20
+### Fixed
+- Syntax error in JavaScript test files.
+
 ## [3.3.1] - 2020-08-10
 ### Fixed
 - Adding missing dependency `graphql-tag`.
