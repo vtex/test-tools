@@ -17,7 +17,7 @@
 ## Install
 
 ```sh
-yarn add -D @vtex/test-tools @apollo/react-testing react-intl@3
+yarn add -D @vtex/test-tools @apollo/react-testing@3 react-intl@3
 ```
 
 ## Usage
