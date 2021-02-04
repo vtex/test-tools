@@ -1,5 +1,5 @@
-import * as utils from './dist/cypress/utils'
-import vtexCommands from './dist/cypress/support/commands.js'
+const utils = require('./dist/cypress/utils')
+const vtexCommands = require('./dist/cypress/support/commands.js')
 
 module.exports = {
   goToSearchPage: utils.goToSearchPage,
