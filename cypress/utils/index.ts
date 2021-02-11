@@ -1,5 +1,6 @@
 import { fillAndCheckShippingSimulator } from './fill'
 import { openCart, closeCart, clearCart } from './cart'
+import { checkIfElementExists } from './find'
 import { checkText } from './assertion'
 import {
   scrollToId,
@@ -52,15 +53,14 @@ export function identifierExists(
   return exists
 }
 
-module.exports = {
+export {
   scrollToId,
   checkText,
   openCart,
   closeCart,
   clearCart,
   fillAndCheckShippingSimulator,
-  resolveIdentifier,
-  identifierExists,
+  checkIfElementExists,
   goToSearchPage,
   goToProductPageByShelf,
 }

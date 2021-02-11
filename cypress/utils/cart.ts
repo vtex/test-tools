@@ -8,7 +8,7 @@ export function openCart() {
 
 /*
   Pages: *
-  Selectors: openCart
+  Selectors: closeCart
 */
 export function closeCart() {
   cy.get('[data-testid="closeCart"').click()

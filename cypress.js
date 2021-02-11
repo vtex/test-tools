@@ -11,6 +11,7 @@ module.exports = {
   fillAndCheckShippingSimulator: utils.fillAndCheckShippingSimulator,
   resolveIdentifier: utils.resolveIdentifier,
   identifierExists: utils.identifierExists,
+  checkIfElementExists: utils.checkIfElementExists,
   scrollToId: utils.scrollToId,
   vtexCommands,
 }
