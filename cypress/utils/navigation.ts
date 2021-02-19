@@ -18,6 +18,8 @@ export function goToSearchPage(options?: NavigationOptions) {
   }
 
   if (options.random) {
+    cy.visit('/')
+
     cy.get('[data-testid="categoryLink"]')
       .its('length')
       .then((itemsLength) => {

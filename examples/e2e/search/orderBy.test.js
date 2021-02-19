@@ -13,7 +13,6 @@ describe('OrderBy filter', () => {
   }
 
   before(() => {
-    cy.visit('/')
     goToSearchPage({ random: true })
   })
 

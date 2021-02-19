@@ -2,7 +2,6 @@ import { goToSearchPage } from '@vtex/test-tools/cypress'
 
 describe('Navigation between search pages', () => {
   before(() => {
-    cy.visit('/')
     goToSearchPage({ random: 1 })
   })
 

@@ -244,23 +244,23 @@ You can check more details of these hooks in the links below:
 
 These are some common use cases that might be helpful to see how it's done:
 
-### [Debugging tests in VS Code](./examples/vscode/)
+- [Debugging tests in VS Code](./examples/vscode/)
 
-### [Testing a React Hook](./examples/hooks/)
+- [Testing a React Hook](./examples/hooks/)
 
-### [Testing a React component](https://github.com/klzns/test-repo/blob/master/react/JsComponent.test.js)
+- [Testing a React component](https://github.com/klzns/test-repo/blob/master/react/JsComponent.test.js)
 
-### [Testing a React component using Typescript](./examples/typescript/)
+- [Testing a React component using Typescript](./examples/typescript/)
 
-### [Testing a component using CSS Modules](https://github.com/klzns/test-repo/blob/master/react/CssComponent.test.js)
+- [Testing a component using CSS Modules](https://github.com/klzns/test-repo/blob/master/react/CssComponent.test.js)
 
-### [Testing a component using GraphQL](https://github.com/klzns/test-repo/blob/master/react/GraphqlComponent.test.js)
+- [Testing a component using GraphQL](https://github.com/klzns/test-repo/blob/master/react/GraphqlComponent.test.js)
 
-### [Testing a component using React Hooks](https://github.com/klzns/test-repo/blob/master/react/HooksComponent.test.js)
+- [Testing a component using React Hooks](https://github.com/klzns/test-repo/blob/master/react/HooksComponent.test.js)
 
-### [Testing a component translating in another locale](https://github.com/klzns/test-repo/blob/master/react/LocaleComponent.test.js)
+- [Testing a component translating in another locale](https://github.com/klzns/test-repo/blob/master/react/LocaleComponent.test.js)
 
-### [Testing end-to-end flows using Cypress](https://github.com/vtex/test-tools/tree/master/examples/e2e)
+- [Testing end-to-end flows using Cypress](https://github.com/vtex/test-tools/tree/master/examples/e2e)
 
 ## License
 

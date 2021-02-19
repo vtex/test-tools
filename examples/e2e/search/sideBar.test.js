@@ -46,8 +46,6 @@ describe('Sidebar filter', () => {
   }
 
   before(() => {
-    cy.visit('/')
-
     goToSearchPage({ random: 1 })
   })
 
