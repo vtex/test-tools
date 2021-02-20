@@ -21,21 +21,19 @@ describe('OrderBy filter', () => {
 
     cy.url().should('include', 'orderBy=OrderByPriceDESC')
 
-    if (checkIfElementExists('offerPrice')) {
-      cy.getById('offerPrice').then((productPriceList) => {
-        const prices = []
+    cy.getById('offerPrice').then((productPriceList) => {
+      const prices = []
 
-        productPriceList.each((_, productPrice) => {
-          const price = PRICE_REGEX.exec(productPrice.textContent) || []
+      productPriceList.each((_, productPrice) => {
+        const price = PRICE_REGEX.exec(productPrice.textContent) || []
 
-          prices.push(formatPrice(price[0]))
-        })
-
-        const sortedPrices = prices.sort((a, b) => a - b)
-
-        expect(prices).to.equal(sortedPrices)
+        prices.push(formatPrice(price[0]))
       })
-    }
+
+      const sortedPrices = prices.sort((a, b) => a - b)
+
+      expect(prices).to.equal(sortedPrices)
+    })
   })
 
   it('tests OrderByPriceASC option', () => {
@@ -44,21 +42,19 @@ describe('OrderBy filter', () => {
 
     cy.url().should('include', 'orderBy=OrderByPriceASC')
 
-    if (checkIfElementExists('offerPrice')) {
-      cy.getById('offerPrice').then((productPriceList) => {
-        const prices = []
+    cy.getById('offerPrice').then((productPriceList) => {
+      const prices = []
 
-        productPriceList.each((_, productPrice) => {
-          const price = PRICE_REGEX.exec(productPrice.textContent) || []
+      productPriceList.each((_, productPrice) => {
+        const price = PRICE_REGEX.exec(productPrice.textContent) || []
 
-          prices.push(formatPrice(price[0]))
-        })
-
-        const sortedPrices = prices.sort((a, b) => b - a)
-
-        expect(prices).to.equal(sortedPrices)
+        prices.push(formatPrice(price[0]))
       })
-    }
+
+      const sortedPrices = prices.sort((a, b) => b - a)
+
+      expect(prices).to.equal(sortedPrices)
+    })
   })
 
   it('tests OrderByNameDESC option', () => {
@@ -66,21 +62,19 @@ describe('OrderBy filter', () => {
 
     cy.url().should('include', 'orderBy=OrderByNameDESC')
 
-    if (checkIfElementExists('offerPrice')) {
-      cy.getById('productSummaryTitle').then((productPriceList) => {
-        const prices = []
+    cy.getById('productSummaryTitle').then((productPriceList) => {
+      const prices = []
 
-        productPriceList.each((_, productPrice) => {
-          const price = PRICE_REGEX.exec(productPrice.textContent) || []
+      productPriceList.each((_, productPrice) => {
+        const price = PRICE_REGEX.exec(productPrice.textContent) || []
 
-          prices.push(formatPrice(price[0]))
-        })
-
-        const sortedPrices = prices.sort((a, b) => b - a)
-
-        expect(prices).to.equal(sortedPrices)
+        prices.push(formatPrice(price[0]))
       })
-    }
+
+      const sortedPrices = prices.sort((a, b) => b - a)
+
+      expect(prices).to.equal(sortedPrices)
+    })
   })
 
   it('tests OrderByNameDESC option', () => {
@@ -88,21 +82,19 @@ describe('OrderBy filter', () => {
 
     cy.url().should('include', 'orderBy=OrderByNameDESC')
 
-    if (checkIfElementExists('offerPrice')) {
-      cy.getById('productSummaryTitle', {
-        timeout: 10000,
-      }).then((productSummaryNames) => {
-        const names = []
+    cy.getById('productSummaryTitle', {
+      timeout: 10000,
+    }).then((productSummaryNames) => {
+      const names = []
 
-        productSummaryNames.each((_, productName) => {
-          names.push(productName.textContent)
-        })
-
-        const sortedNames = names.sort((a, b) => (a < b ? 1 : -1))
-
-        expect(names).to.equal(sortedNames)
+      productSummaryNames.each((_, productName) => {
+        names.push(productName.textContent)
       })
-    }
+
+      const sortedNames = names.sort((a, b) => (a < b ? 1 : -1))
+
+      expect(names).to.equal(sortedNames)
+    })
   })
 
   it('tests OrderByNameASC option', () => {
@@ -110,19 +102,17 @@ describe('OrderBy filter', () => {
 
     cy.url().should('include', 'orderBy=OrderByNameASC')
 
-    if (checkIfElementExists('offerPrice')) {
-      cy.getById('productSummaryTitle').then((productSummaryNames) => {
-        const names = []
+    cy.getById('productSummaryTitle').then((productSummaryNames) => {
+      const names = []
 
-        productSummaryNames.each((_, productName) => {
-          names.push(productName.textContent)
-        })
-
-        const sortedNames = names.sort((a, b) => (a < b ? -1 : 1))
-
-        expect(names).to.equal(sortedNames)
+      productSummaryNames.each((_, productName) => {
+        names.push(productName.textContent)
       })
-    }
+
+      const sortedNames = names.sort((a, b) => (a < b ? -1 : 1))
+
+      expect(names).to.equal(sortedNames)
+    })
   })
 
   it('tests OrderByReviewRateDESC option', () => {
