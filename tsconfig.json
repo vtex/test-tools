@@ -7,7 +7,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "allowJs": true,
-    "types": ["cypress", "jest", "node"]
+    "types": ["jest", "node"]
   },
-  "include": ["./src/**/*", "./cypress/**/*"]
+  "include": ["./src/**/*"]
 }
