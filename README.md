@@ -189,13 +189,13 @@ test('should render mock graphql responses', async () => {
 
 We offer hooks to make writing end-to-end tests easier.
 
-Extended commands
+Extended commands:
 
 - clickById
 - getById
 - typeById
 
-Custom methods
+Custom methods:
 
 - goToSearchPage
 - goToProductPageByShelf
