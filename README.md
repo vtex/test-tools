@@ -13,6 +13,7 @@
   - [React Hooks](#react-hooks)
   - [Messages I18n](#messages)
   - [GraphQL](#graphql)
+  - [End-to-end flows](#end-to-end-flows)
 
 ## Install
 
@@ -184,25 +185,82 @@ test('should render mock graphql responses', async () => {
 })
 ```
 
+### End-to-end flows
+
+We offer hooks to make writing end-to-end tests easier.
+
+Extended commands:
+
+- clickById
+- getById
+- typeById
+
+Custom methods:
+
+- goToSearchPage
+- goToProductPageByShelf
+- checkText
+- checkIfElementExists
+- openCart
+- closeCart
+- clearCart
+- fillAndCheckShippingSimulator
+- scrollToId
+
+Example:
+
+```js
+import { openCart } from "@vtex/test-tools/cypress"
+
+describe('Searchbar', () => {
+  before(() => {
+    cy.intercept(/operationName=ProductsSuggestionsQuery/, {
+      fixture: 'product-suggestions-query.json',
+    }).as('searchSuggestionsLoad')
+  })
+
+  it('finds a very specific product using the search bar', () => {
+    cy.visit('/')
+
+    cy.getById('searchBarInput').eq(0).type('Product')
+
+    cy.getById('searchSuggestionsItem').contains('Product').click()
+
+    cy.clickById('addToCart')
+
+    openCart()
+
+    ...
+  })
+})
+```
+
+You can check more details of these hooks in the links below:
+
+- [`cypress/support/commands`](https://github.com/vtex/test-tools/tree/master/cypress/support/commands.ts)
+- [`cypress/utils`](https://github.com/vtex/test-tools/tree/master/cypress/utils)
+
 ## Examples
 
 These are some common use cases that might be helpful to see how it's done:
 
-### [Debugging tests in VS Code](./examples/vscode/)
+- [Debugging tests in VS Code](./examples/vscode/)
 
-### [Testing a React component](https://github.com/klzns/test-repo/blob/master/react/JsComponent.test.js)
+- [Testing a React Hook](./examples/hooks/)
 
-### [Testing a React Hook](./examples/hooks/)
+- [Testing a React component](https://github.com/klzns/test-repo/blob/master/react/JsComponent.test.js)
 
-### [TypeScript](./examples/typescript/)
+- [Testing a React component using Typescript](./examples/typescript/)
 
-### [Testing a component using CSS Modules](https://github.com/klzns/test-repo/blob/master/react/CssComponent.test.js)
+- [Testing a component using CSS Modules](https://github.com/klzns/test-repo/blob/master/react/CssComponent.test.js)
 
-### [Testing a component using GraphQL](https://github.com/klzns/test-repo/blob/master/react/GraphqlComponent.test.js)
+- [Testing a component using GraphQL](https://github.com/klzns/test-repo/blob/master/react/GraphqlComponent.test.js)
 
-### [Testing a component using React Hooks](https://github.com/klzns/test-repo/blob/master/react/HooksComponent.test.js)
+- [Testing a component using React Hooks](https://github.com/klzns/test-repo/blob/master/react/HooksComponent.test.js)
 
-### [Testing a component translating in another locale](https://github.com/klzns/test-repo/blob/master/react/LocaleComponent.test.js)
+- [Testing a component translating in another locale](https://github.com/klzns/test-repo/blob/master/react/LocaleComponent.test.js)
+
+- [Testing end-to-end flows using Cypress](https://github.com/vtex/test-tools/tree/master/examples/e2e)
 
 ## License
 
