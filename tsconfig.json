@@ -9,5 +9,5 @@
     "allowJs": true,
     "types": ["cypress", "jest", "node"]
   },
-  "include": ["./src/**/*", "./cypress/**/*"]
+  "include": ["./src/**/*"]
 }

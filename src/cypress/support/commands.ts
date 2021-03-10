@@ -70,4 +70,4 @@ const vtexCommands = () => {
   )
 }
 
-module.exports = vtexCommands
+export default vtexCommands
