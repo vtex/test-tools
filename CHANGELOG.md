@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Move cypress to the src path.
+
 ### Added
 - Extensible commands, utils and generic tests for cypress/e2e.
 
