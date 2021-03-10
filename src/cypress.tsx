@@ -1,10 +1,7 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable @typescript-eslint/no-require-imports */
 import * as utils from './cypress/utils'
+import vtexCommands from './cypress/support/commands.js'
 
-const vtexCommands = require('./cypress/support/commands.js')
-
-module.exports = {
+export default {
   goToSearchPage: utils.goToSearchPage,
   goToProductPageByShelf: utils.goToProductPageByShelf,
   checkText: utils.checkText,
