@@ -28,7 +28,7 @@ export function goToSearchPage(options?: NavigationOptions) {
         cy.get(`[data-testid="categoryLink"]`)
           .eq(itemIndex)
           .invoke('show')
-          .click({ force: true })
+          .trigger('click')
       })
   }
 }
@@ -78,6 +78,8 @@ export function goToProductPageByShelf(
   cy.get('[data-testid="shelfPage"]')
     .eq(shelfIndex)
     .within((_) => {
-      cy.get(`[data-testid="productSummaryContainer"]`).eq(productIndex).click()
+      cy.get(`[data-testid="productSummaryContainer"]`)
+        .eq(productIndex)
+        .trigger('click')
     })
 }

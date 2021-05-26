@@ -3,7 +3,7 @@
   Selectors: openCart
 */
 export function openCart() {
-  cy.get('[data-testid="openCart"').click()
+  cy.get('[data-testid="openCart"').trigger('click')
 }
 
 /*
@@ -11,7 +11,7 @@ export function openCart() {
   Selectors: closeCart
 */
 export function closeCart() {
-  cy.get('[data-testid="closeCart"').click()
+  cy.get('[data-testid="closeCart"').trigger('click')
 }
 
 /*
@@ -24,7 +24,7 @@ export function clearCart() {
   cy.get('body').then(($body) => {
     if ($body.find('[data-testid="minicartDelete"]').length) {
       cy.get('[data-testid="minicartDelete"]').each(($deleteIcon, _) => {
-        cy.wrap($deleteIcon).click()
+        cy.wrap($deleteIcon).trigger('click')
       })
     }
   })

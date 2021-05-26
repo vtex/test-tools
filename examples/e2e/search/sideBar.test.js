@@ -23,14 +23,12 @@ describe('Sidebar filter', () => {
         '[data-testid="collapsible-Categoria"] [data-testid="searchFilterAccordionCollaipsibleIcon"]'
       )
         .eq(0)
-        .click({
-          force: true,
-        })
+        .trigger('click')
     }
 
     cy.getById(['collapsible-Categoria', 'filterItemCheckbox'])
       .eq(0)
-      .click({ force: true })
+      .trigger('click')
 
     cy.location().url().should('include', 'map=')
 
