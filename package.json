@@ -28,6 +28,7 @@
     "scripts",
     "react.js",
     "react.d.ts",
+    "cypress.js",
     "README.md"
   ],
   "scripts": {
