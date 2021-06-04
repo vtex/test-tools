@@ -22,13 +22,13 @@ export function goToSearchPage(options?: NavigationOptions) {
 
     cy.get('[data-testid="categoryLink"]')
       .its('length')
-      .then((itemsLength) => {
-        const itemIndex = Math.floor(Math.random() * itemsLength)
+      .then(($length) => {
+        const itemIndex = Math.round(Math.random() * $length)
 
         cy.get(`[data-testid="categoryLink"]`)
-          .eq(itemIndex)
+          .eq((1 - itemIndex) * itemIndex)
           .invoke('show')
-          .trigger('click')
+          .click({ force: true })
       })
   }
 }
@@ -80,6 +80,6 @@ export function goToProductPageByShelf(
     .within((_) => {
       cy.get(`[data-testid="productSummaryContainer"]`)
         .eq(productIndex)
-        .trigger('click')
+        .click({ force: true })
     })
 }
