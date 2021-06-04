@@ -3,7 +3,7 @@
   Selectors: openCart
 */
 export function openCart() {
-  cy.get('[data-testid="openCart"').trigger('click')
+  cy.get('[data-testid="openCart"').click({ force: true })
 }
 
 /*
@@ -11,7 +11,7 @@ export function openCart() {
   Selectors: closeCart
 */
 export function closeCart() {
-  cy.get('[data-testid="closeCart"').trigger('click')
+  cy.get('[data-testid="closeCart"').should('be.visible').click()
 }
 
 /*
