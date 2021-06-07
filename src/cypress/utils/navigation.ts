@@ -26,7 +26,7 @@ export function goToSearchPage(options?: NavigationOptions) {
         const itemIndex = Math.round(Math.random() * $length)
 
         cy.get(`[data-testid="categoryLink"]`)
-          .eq((1 - itemIndex) * itemIndex)
+          .eq(itemIndex)
           .invoke('show')
           .click({ force: true })
       })
