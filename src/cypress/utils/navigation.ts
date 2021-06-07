@@ -23,12 +23,25 @@ export function goToSearchPage(options?: NavigationOptions) {
     cy.get('[data-testid="categoryLink"]')
       .its('length')
       .then(($length) => {
-        const itemIndex = Math.round(Math.random() * $length)
+        const itemIndex = Math.round(Math.random() * ($length - 1))
 
         cy.get(`[data-testid="categoryLink"]`)
           .eq(itemIndex)
-          .invoke('show')
-          .click({ force: true })
+          .then(($link) => {
+            const url = new URL($link.prop('href'))
+
+            cy.intercept('GET', `/page-data/${url.pathname}/page-data.json`).as(
+              'pageLoad'
+            )
+            cy.visit($link.prop('href'))
+              .wait('@pageLoad')
+              .its('response.statusCode')
+              .then(($code) => {
+                if ($code === 404) {
+                  goToSearchPage({ categoryId: '', random: true })
+                }
+              })
+          })
       })
   }
 }
