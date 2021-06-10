@@ -8,13 +8,44 @@ import { resolveIdentifier } from './index'
 interface NavigationOptions {
   categoryId: string
   random: boolean
+  pageIndex?: number
 }
 
-export function goToSearchPage(options?: NavigationOptions) {
-  if (!options) return
+export function goToSearchPage(options?: NavigationOptions): boolean {
+  if (!options) return false
 
   if (options.categoryId) {
     cy.visit(options.categoryId)
+
+    return true
+  }
+
+  if (options.pageIndex !== undefined) {
+    let success = true
+
+    cy.get('[data-testid="categoryLink"]')
+      .eq(options.pageIndex!)
+      .invoke('show')
+      .then(($link) => {
+        const url = new URL($link.prop('href'))
+
+        cy.intercept('GET', `/page-data/${url.pathname}/page-data.json`).as(
+          `pageLoad${url.pathname}`
+        )
+        cy.get(`[data-testid="categoryLink"]`)
+          .eq(options.pageIndex!)
+          .invoke('show')
+          .click({ force: true })
+          .wait(`@pageLoad${url.pathname}`)
+          .its('response.statusCode')
+          .then(($code) => {
+            if ($code !== 200) {
+              success = false
+            }
+          })
+      })
+
+    return success
   }
 
   if (options.random) {
@@ -31,10 +62,13 @@ export function goToSearchPage(options?: NavigationOptions) {
             const url = new URL($link.prop('href'))
 
             cy.intercept('GET', `/page-data/${url.pathname}/page-data.json`).as(
-              'pageLoad'
+              `pageLoad${url.pathname}`
             )
-            cy.visit($link.prop('href'))
-              .wait('@pageLoad')
+            cy.get(`[data-testid="categoryLink"]`)
+              .eq(itemIndex)
+              .invoke('show')
+              .click({ force: true })
+              .wait(`@pageLoad${url.pathname}`)
               .its('response.statusCode')
               .then(($code) => {
                 if ($code === 404) {
@@ -44,6 +78,8 @@ export function goToSearchPage(options?: NavigationOptions) {
           })
       })
   }
+
+  return true
 }
 
 /*
