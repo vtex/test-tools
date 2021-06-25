@@ -11,7 +11,7 @@ export function fillAndCheckShippingSimulator(
   params: FillAndCheckShippingSimulatorParams
 ) {
   cy.get('[data-testid="postalCode"]').type(params?.postalCode)
-  cy.get('[data-testid="postalCodeSubmit"]').click({ force: true })
+  cy.get('[data-testid="postalCodeSubmit"]').click()
 
   cy.get('body').find('[data-testid="shippingTable"]')
 }

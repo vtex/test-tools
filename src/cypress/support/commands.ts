@@ -27,12 +27,12 @@ import { resolveIdentifier } from '../utils/index'
 
 // export function clickAt(dataTestId: string, options: ClickOptions) {
 //   if (options?.index !== undefined) {
-//     cy.get(resolveIdentifier(dataTestId)).eq(0).click({ force: true })
+//     cy.get(resolveIdentifier(dataTestId)).eq(0).click()
 
 //     return
 //   }
 
-//   cy.get(resolveIdentifier(dataTestId)).click({ force: true })
+//   cy.get(resolveIdentifier(dataTestId)).click()
 // }
 
 const vtexCommands = () => {
@@ -59,12 +59,10 @@ const vtexCommands = () => {
     'clickById',
     (dataTestId: string[] | string, options?: ClickOptions) => {
       if (options?.index !== undefined) {
-        cy.get(resolveIdentifier(dataTestId))
-          .eq(options.index)
-          .click({ force: true })
+        cy.get(resolveIdentifier(dataTestId)).eq(options.index).click()
       }
 
-      cy.get(resolveIdentifier(dataTestId)).click({ force: true })
+      cy.get(resolveIdentifier(dataTestId)).click()
     }
   )
 }

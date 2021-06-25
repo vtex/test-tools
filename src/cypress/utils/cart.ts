@@ -3,7 +3,7 @@
   Selectors: openCart
 */
 export function openCart() {
-  cy.get('[data-testid="openCart"').click({ force: true })
+  cy.get('[data-testid="openCart"').click()
 }
 
 /*
@@ -24,7 +24,7 @@ export function clearCart() {
   cy.get('body').then(($body) => {
     if ($body.find('[data-testid="minicartDelete"]').length) {
       cy.get('[data-testid="minicartDelete"]').each(($deleteIcon, _) => {
-        cy.wrap($deleteIcon).trigger('click')
+        cy.wrap($deleteIcon).click()
       })
     }
   })
