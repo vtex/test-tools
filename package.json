@@ -1,6 +1,6 @@
 {
   "name": "@vtex/test-tools",
-  "version": "3.4.1",
+  "version": "3.4.3-beta.0",
   "description": "VTEX IO testing tools",
   "repository": {
     "type": "git",
@@ -71,7 +71,7 @@
     "apollo-client": "^2.6.4",
     "babel-jest": "^25.5.1",
     "babel-plugin-const-enum": "^1.0.1",
-    "graphql": "^15.5.0",
+    "graphql": "^14.0.0",
     "graphql-tag": "^2.11.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.0.0",
@@ -96,9 +96,6 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
     "react-intl": "^3.9.2"
-  },
-  "resolutions": {
-    "graphql": "^15.5.0"
   },
   "peerDependencies": {
     "@apollo/react-testing": "^3.1.3",

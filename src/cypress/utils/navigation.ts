@@ -11,15 +11,15 @@ interface NavigationOptions {
   pageIndex?: number
 }
 
-export function goToSearchPage(options?: NavigationOptions) {
+export function goToSearchPage(options?: NavigationOptions): boolean {
   if (!options) {
-    return
+    return false
   }
 
   if (options.categoryId) {
     cy.visit(options.categoryId)
 
-    return
+    return true
   }
 
   if (options.random) {
@@ -50,10 +50,12 @@ export function goToSearchPage(options?: NavigationOptions) {
               })
           })
       })
+
+    return true
   }
 
   if (options.pageIndex === undefined) {
-    return
+    return false
   }
 
   let success = true
