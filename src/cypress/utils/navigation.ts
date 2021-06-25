@@ -11,41 +11,15 @@ interface NavigationOptions {
   pageIndex?: number
 }
 
-export function goToSearchPage(options?: NavigationOptions): boolean {
-  if (!options) return false
+export function goToSearchPage(options?: NavigationOptions) {
+  if (!options) {
+    return
+  }
 
   if (options.categoryId) {
     cy.visit(options.categoryId)
 
-    return true
-  }
-
-  if (options.pageIndex !== undefined) {
-    let success = true
-
-    cy.get('[data-testid="categoryLink"]')
-      .eq(options.pageIndex!)
-      .invoke('show')
-      .then(($link) => {
-        const url = new URL($link.prop('href'))
-
-        cy.intercept('GET', `/page-data/${url.pathname}/page-data.json`).as(
-          `pageLoad${url.pathname}`
-        )
-        cy.get(`[data-testid="categoryLink"]`)
-          .eq(options.pageIndex!)
-          .invoke('show')
-          .click({ force: true })
-          .wait(`@pageLoad${url.pathname}`)
-          .its('response.statusCode')
-          .then(($code) => {
-            if ($code !== 200) {
-              success = false
-            }
-          })
-      })
-
-    return success
+    return
   }
 
   if (options.random) {
@@ -54,7 +28,7 @@ export function goToSearchPage(options?: NavigationOptions): boolean {
     cy.get('[data-testid="categoryLink"]')
       .its('length')
       .then(($length) => {
-        const itemIndex = Math.round(Math.random() * ($length - 1))
+        const itemIndex = Math.floor(Math.random() * $length)
 
         cy.get(`[data-testid="categoryLink"]`)
           .eq(itemIndex)
@@ -66,12 +40,11 @@ export function goToSearchPage(options?: NavigationOptions): boolean {
             )
             cy.get(`[data-testid="categoryLink"]`)
               .eq(itemIndex)
-              .invoke('show')
               .click({ force: true })
               .wait(`@pageLoad${url.pathname}`)
               .its('response.statusCode')
               .then(($code) => {
-                if ($code === 404) {
+                if ($code < 200 || $code > 399) {
                   goToSearchPage({ categoryId: '', random: true })
                 }
               })
@@ -79,7 +52,34 @@ export function goToSearchPage(options?: NavigationOptions): boolean {
       })
   }
 
-  return true
+  if (options.pageIndex === undefined) {
+    return
+  }
+
+  let success = true
+  const pageIndex: number = options?.pageIndex
+
+  cy.get('[data-testid="categoryLink"]')
+    .eq(pageIndex)
+    .then(($link) => {
+      const url = new URL($link.prop('href'))
+
+      cy.intercept('GET', `/page-data/${url.pathname}/page-data.json`).as(
+        `pageLoad${url.pathname}`
+      )
+      cy.get(`[data-testid="categoryLink"]`)
+        .eq(pageIndex)
+        .click({ force: true })
+        .wait(`@pageLoad${url.pathname}`)
+        .its('response.statusCode')
+        .then(($code) => {
+          if ($code !== 200) {
+            success = false
+          }
+        })
+    })
+
+  return success
 }
 
 /*
@@ -127,8 +127,6 @@ export function goToProductPageByShelf(
   cy.get('[data-testid="shelfPage"]')
     .eq(shelfIndex)
     .within((_) => {
-      cy.get(`[data-testid="productSummaryContainer"]`)
-        .eq(productIndex)
-        .click({ force: true })
+      cy.get(`[data-testid="productSummaryContainer"]`).eq(productIndex).click()
     })
 }
