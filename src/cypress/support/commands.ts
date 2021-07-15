@@ -52,6 +52,7 @@ const vtexCommands = () => {
     Selectors: {{ param }}
   */
   interface ClickOptions {
+    force: boolean
     index: number
   }
 
@@ -59,10 +60,12 @@ const vtexCommands = () => {
     'clickById',
     (dataTestId: string[] | string, options?: ClickOptions) => {
       if (options?.index !== undefined) {
-        cy.get(resolveIdentifier(dataTestId)).eq(options.index).click()
+        cy.get(resolveIdentifier(dataTestId))
+          .eq(options.index)
+          .click({ force: options?.force })
       }
 
-      cy.get(resolveIdentifier(dataTestId)).click()
+      cy.get(resolveIdentifier(dataTestId)).click({ force: options?.force })
     }
   )
 }
