@@ -10,6 +10,6 @@ describe('Searchbar', () => {
 
     cy.getById('searchBarInput').eq(0).type('Product')
 
-    cy.getById('searchSuggestionsItem').contains('Product').trigger('click')
+    cy.getById('searchSuggestionsItem').contains('Product').click()
   })
 })

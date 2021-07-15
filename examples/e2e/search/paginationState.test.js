@@ -40,7 +40,7 @@ describe('Pagination state', () => {
 
     cy.getById('productSummaryContainer').should('have.length', 24)
 
-    cy.getById('productSummaryContainer').eq(0).invoke('show').trigger('click')
+    cy.getById('productSummaryContainer').eq(0).invoke('show').click()
 
     cy.url().should('include', '/p')
 

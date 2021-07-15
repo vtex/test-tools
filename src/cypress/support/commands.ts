@@ -27,12 +27,12 @@ import { resolveIdentifier } from '../utils/index'
 
 // export function clickAt(dataTestId: string, options: ClickOptions) {
 //   if (options?.index !== undefined) {
-//     cy.get(resolveIdentifier(dataTestId)).eq(0).click()
+//     cy.get(resolveIdentifier(dataTestId)).eq(0).click({ force: options?.force })
 
 //     return
 //   }
 
-//   cy.get(resolveIdentifier(dataTestId)).click()
+//   cy.get(resolveIdentifier(dataTestId)).click({ force: options?.force })
 // }
 
 const vtexCommands = () => {
