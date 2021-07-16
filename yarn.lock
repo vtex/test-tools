@@ -1719,10 +1719,10 @@
   resolved "https://registry.yarnpkg.com/@vtex/prettier-config/-/prettier-config-0.3.6.tgz#31762608d9a59b815b6d4e963e439b12f1a12279"
   integrity sha512-nXE3BcMODomFK3EowfK+Hdj2qQRqB8JcdRv8yTREXnN9xq8DYKmH/dWB+RY/Hn3KozFLbygpZRbqYsiA6HDINQ==
 
-"@vtex/test-tools@^3.3.2":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@vtex/test-tools/-/test-tools-3.4.1.tgz#3ac397ca584ee8aee52d6de19c81047898dc965b"
-  integrity sha512-D2DG8tUNos6Rdui8n8ip4gJ0NwbX7EoRoxEFMMFZhSD3y8fxtDaU7RgLjyOlmeUKkOSbjunHzRnQdbzcVc2jGw==
+"@vtex/test-tools@^3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@vtex/test-tools/-/test-tools-3.4.2.tgz#557d47620182bfecbe5c9e47de69c5dfa1898bf2"
+  integrity sha512-+zhUHnX9RFKmM5vaSDkU+SbLc9UkBtkbxN2nquSyMfSidwimRVC0yImQuBW2vnT6qNxbJOMmr+Invm5X/tEang==
   dependencies:
     "@babel/core" "^7.11.1"
     "@babel/plugin-proposal-class-properties" "^7.10.4"
@@ -3745,7 +3745,7 @@ graphql-tag@^2.11.0:
   dependencies:
     tslib "^2.1.0"
 
-graphql@*:
+graphql@*, graphql@^15.5.0:
   version "15.5.1"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.5.1.tgz#f2f84415d8985e7b84731e7f3536f8bb9d383aad"
   integrity sha512-FeTRX67T3LoE3LWAxxOlW2K3Bz+rMYAC18rRguK4wgXaTZMiJwSUwDmPFo3UadAKbzirKIg5Qy+sNJXbpPRnQw==
