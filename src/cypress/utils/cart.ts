@@ -11,7 +11,7 @@ export function openCart() {
   Selectors: closeCart
 */
 export function closeCart() {
-  cy.get('[data-testid="closeCart"').click()
+  cy.get('[data-testid="closeCart"').should('be.visible').click()
 }
 
 /*
