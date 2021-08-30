@@ -63,6 +63,8 @@ const vtexCommands = () => {
         cy.get(resolveIdentifier(dataTestId))
           .eq(options.index)
           .click({ force: options?.force })
+
+        return
       }
 
       cy.get(resolveIdentifier(dataTestId)).click({ force: options?.force })

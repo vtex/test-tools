@@ -71,7 +71,7 @@
     "apollo-client": "^2.6.4",
     "babel-jest": "^25.5.1",
     "babel-plugin-const-enum": "^1.0.1",
-    "graphql": "^14.0.0",
+    "graphql": "^15.5.0",
     "graphql-tag": "^2.11.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.0.0",

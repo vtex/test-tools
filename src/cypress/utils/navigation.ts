@@ -11,9 +11,9 @@ interface NavigationOptions {
   pageIndex: number
 }
 
-export function goToSearchPage(options?: NavigationOptions): boolean {
+export function goToSearchPage(options: NavigationOptions) {
   if (!options) {
-    return false
+    return
   }
 
   if (options.categoryId) {
@@ -33,23 +33,7 @@ export function goToSearchPage(options?: NavigationOptions): boolean {
 
       cy.get(`[data-testid="categoryLink"]`)
         .eq(itemIndex)
-        .then(($link) => {
-          const url = new URL($link.prop('href'))
-
-          cy.intercept('GET', `/page-data/${url.pathname}/page-data.json`).as(
-            `pageLoad${url.pathname}`
-          )
-          cy.get(`[data-testid="categoryLink"]`)
-            .eq(itemIndex)
-            .click({ force: true })
-            .wait(`@pageLoad${url.pathname}`)
-            .its('response.statusCode')
-            .then(($code) => {
-              if ($code < 200 || $code > 399) {
-                goToSearchPage({ categoryId: '', random: true, pageIndex: -1 })
-              }
-            })
-        })
+        .click({ force: true })
     })
 
   return true
