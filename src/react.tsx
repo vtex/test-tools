@@ -1,9 +1,12 @@
 import React from 'react'
-import { RenderOptions, render, act, cleanup } from '@testing-library/react'
+import type { RenderOptions } from '@testing-library/react'
+import { render, act, cleanup } from '@testing-library/react'
 import * as hooks from '@testing-library/react-hooks'
-import { MockedProvider, MockedProviderProps } from '@apollo/react-testing'
+import type { MockedProviderProps } from '@apollo/react-testing'
+import { MockedProvider } from '@apollo/react-testing'
 import { IntlProvider } from 'react-intl'
-import { InMemoryCache, IdGetterObj } from 'apollo-cache-inmemory'
+import type { IdGetterObj } from 'apollo-cache-inmemory'
+import { InMemoryCache } from 'apollo-cache-inmemory'
 
 import * as paths from './modules/paths'
 import { readJSON } from './utils/json'
@@ -101,7 +104,10 @@ const customRender = (
 export const flushPromises = () =>
   new Promise((resolve) => setImmediate(resolve))
 
+// we really want to override the defaults, so the exports with the same name is no big deal
+// eslint-disable-next-line import/export
 export * from '@testing-library/react'
 
 // re-export everything
+// eslint-disable-next-line import/export
 export { customRender as render, act, cleanup, hooks, renderHook }
